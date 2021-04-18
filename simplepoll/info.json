@@ -1,7 +1,7 @@
 {
   "author": ["ZeroMomentum"],
   "description": "Cog to do simple polls with yes/no/maybe options, and somewhat complex polls with custom options",
-  "install_msg": "Thanks for installing my cog! For support, you can find me in the Red Cog Support server, or send me a dm (ZeroMomentum#1231). For help, use [p]help SimplePoll",
+  "install_msg": "For help, use [p]help SimplePoll",
   "short": "Cog to do polls",
   "tags": ["poll", "reactions", "vote"]
 }
