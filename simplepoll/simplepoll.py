@@ -14,7 +14,7 @@ class SimplePoll(commands.Cog):
     async def quickpoll(self, ctx, *, question):
         """ Makes a simple poll to ask a question """
         await ctx.message.delete()
-        embed = discord.Embed(title=question, colour=discord.Colour(ctx.embed_color()))
+        embed = discord.Embed(title=question, colour=await ctx.embed_color())
         embed.set_author(name=f"{ctx.author.name} asks... ")
         msg = await ctx.send(embed=embed)
         start_adding_reactions(msg, ["\U0001f44d", "\U0001f44e", "\U0001f937"])
@@ -32,7 +32,7 @@ class SimplePoll(commands.Cog):
       desc = ""
       for num, option in enumerate(answers):
         desc += f"{EMOJI[num]} {option}\n"
-      embed = discord.Embed(title=question, colour=ctx.embed_color(), description=desc)
+      embed = discord.Embed(title=question, colour=await ctx.embed_color(), description=desc)
       msg = await ctx.send(embed)
       for i in range(len(answers)):
         await msg.add_reaction(EMOJI[i])
