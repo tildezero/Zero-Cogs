@@ -1,6 +1,7 @@
 from redbot.core import commands
 from redbot.core.utils.menus import start_adding_reactions
 from redbot.core.bot import Red
+import discord
 
 # Classname should be CamelCase and the same spelling as the folder
 class SimplePoll(commands.Cog):
