@@ -5,6 +5,9 @@ from redbot.core.utils.menus import start_adding_reactions
 # Classname should be CamelCase and the same spelling as the folder
 class SimplePoll(commands.Cog):
     """Cog to do polls with simple yes, no, maybe options, and custom options as well!"""
+    
+    def __init__(self, bot: Red):
+        self.bot = bot
 
     @commands.command(name='quickpoll', aliases=['vote', 'qpoll'])
     async def quickpoll(self, ctx, *, question):
