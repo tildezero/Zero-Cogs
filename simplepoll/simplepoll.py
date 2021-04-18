@@ -25,6 +25,7 @@ class SimplePoll(commands.Cog):
       Makes a poll that allows custom options. Split the question and each option with a comma (,).
       Example: `[p]poll What is your favorite color?, red, blue, green, other`
       """
+      await ctx.message.delete()
       EMOJI = "🇦 🇧 🇨 🇩 🇪 🇫 🇬 🇭 🇮 🇯".split(" ")
       split_args = question_and_options.split(",")
       question = split_args[0].strip()
@@ -33,7 +34,7 @@ class SimplePoll(commands.Cog):
       for num, option in enumerate(answers):
         desc += f"{EMOJI[num]} {option}\n"
       embed = discord.Embed(title=question, colour=await ctx.embed_color(), description=desc)
-      msg = await ctx.send(embed)
+      msg = await ctx.send(embed=embed)
       for i in range(len(answers)):
         await msg.add_reaction(EMOJI[i])
         
